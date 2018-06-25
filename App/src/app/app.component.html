@@ -1,0 +1,57 @@
+<div class="row">
+
+  <div class="col-sm-12">
+
+    <h1>Bindings</h1>
+
+    <h3>Property bindings[]</h3>
+    <img [src]="imagenURL" [alt]="'Marvel iron man'" [width]="imagenWidth">
+
+    <p [style.color]="'red'" [innerText]="'hola amigos'"></p>
+
+    <div [innerHTML]="'<h1>hola<h1>'"></div>
+    <div [innerHTML]="html"></div>
+
+    <h3>Event bindings()</h3>
+
+    <button class="btn btn-block btn-info" (click)="imagenWidth=imagenWidth+2"
+    (click)="aumentarWidth">
+      aumentar imagen
+    </button>
+
+    <h1 (mouseenter)="restarWidth()">restar imagen</h1>
+
+    <h3>NgModel (two way data bindings)[()]</h3>
+    <label for="width">Width</label>
+    <input id="Width "type="text">
+  </div>
+
+  <div class="col-sm-4"></div>
+
+  <div class="col-sm-4" >
+    <h1 class="text-center">Hola
+      <span *ngIf="mostrarTitulo">{{titulo}}</span>
+      </h1>
+
+    <p>Soy el usuario
+    {{usuario.nombre+''+usuario.apellido}}
+    {{1+23}}
+    </p>
+
+    <ul>
+      <li>{{arregloNumeros[0]}}</li>
+      <li>{{arregloNumeros[1]}}</li>
+      <li>{{arregloNumeros[2]}}</li>
+      <li>{{arregloNumeros[3]}}</li>
+      <li>{{arregloNumeros[4]}}</li>
+
+    </ul>
+
+    <ul>
+      <li *ngFor="let numero of arregloNumeros;
+let i=index ">
+        {{i+1}}.- Valor del numero: {{numero}}</li>
+    </ul>
+  </div>
+  <div class="col-sm-4"></div>
+</div>
